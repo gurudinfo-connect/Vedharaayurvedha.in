@@ -1,0 +1,81 @@
+/* =========================================================
+   VEDHARA AYURVEDA — Animations
+   ========================================================= */
+
+@keyframes heroZoom{
+  0%{transform:scale(1);}
+  100%{transform:scale(1.12);}
+}
+@keyframes scrollLine{
+  0%{transform:translateY(-100%);}
+  60%{transform:translateY(120%);}
+  100%{transform:translateY(120%);}
+}
+@keyframes floatY{
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-18px) rotate(4deg);}
+}
+@keyframes fadeIn{
+  from{opacity:0;} to{opacity:1;}
+}
+@keyframes hangSwing{
+  0%,100%{transform:rotate(-1.1deg);}
+  50%{transform:rotate(1.1deg);}
+}
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+
+/* Scroll reveal base states */
+.reveal{
+  opacity:0;
+  transform:translateY(36px);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+.reveal-left{opacity:0;transform:translateX(-46px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal-left.in-view{opacity:1;transform:translateX(0);}
+
+.reveal-right{opacity:0;transform:translateX(46px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal-right.in-view{opacity:1;transform:translateX(0);}
+
+.reveal-scale{opacity:0;transform:scale(.92);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal-scale.in-view{opacity:1;transform:scale(1);}
+
+.reveal-stagger > *{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .8s var(--ease),transform .8s var(--ease);
+}
+.reveal-stagger.in-view > *{opacity:1;transform:translateY(0);}
+.reveal-stagger.in-view > *:nth-child(1){transition-delay:.05s;}
+.reveal-stagger.in-view > *:nth-child(2){transition-delay:.15s;}
+.reveal-stagger.in-view > *:nth-child(3){transition-delay:.25s;}
+.reveal-stagger.in-view > *:nth-child(4){transition-delay:.35s;}
+
+/* hero content entrance (JS toggles .loaded on body) */
+.hero .hero-tagline,.hero .eyebrow,.hero h1,.hero p,.hero-btns{
+  opacity:0;transform:translateY(26px);
+  transition:opacity 1s var(--ease),transform 1s var(--ease);
+}
+body.loaded .hero .hero-tagline{opacity:1;transform:translateY(0);transition-delay:.05s;}
+body.loaded .hero .eyebrow{opacity:1;transform:translateY(0);transition-delay:.25s;}
+body.loaded .hero h1{opacity:1;transform:translateY(0);transition-delay:.45s;}
+body.loaded .hero p{opacity:1;transform:translateY(0);transition-delay:.65s;}
+body.loaded .hero-btns{opacity:1;transform:translateY(0);transition-delay:.85s;}
+
+/* mobile nav drawer */
+.nav-links.mobile-open{
+  display:flex !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .hero-media img{animation:none;}
+}

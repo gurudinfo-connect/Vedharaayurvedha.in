@@ -1,0 +1,445 @@
+/* =========================================================
+   VEDHARA AYURVEDA — booking-form.css
+   Ancient Kerala Thalapathra / royal manuscript enquiry
+   scroll, hung inside the homepage hero.
+   ========================================================= */
+
+.vscroll-wrap{
+  --vp-p1:#ead3a0;
+  --vp-p2:#f4e3b7;
+  --vp-p3:#dfc18b;
+  --vp-cream:#f8f0dc;
+  --vp-dark-brown:#4b321d;
+  --vp-text:#3b2b1b;
+  --vp-muted:#7a5a34;
+  --vp-gold:#b18a45;
+  --vp-muted-gold:#c7a968;
+  --vp-forest:#29452d;
+  --vp-forest-dark:#18321f;
+
+  position:absolute;
+  top:176px;
+  right:14%;
+  z-index:3;
+  width:280px;
+  max-width:27%;
+  /* pivot sits 170px ABOVE the box -- at the fixed point the threads
+     hang from -- not at the card's own top edge. That's what makes
+     the card swing like a weight on a string instead of spinning on
+     its own corner: the anchor stays put, the card (and the lower
+     part of the thread) arcs beneath it. */
+  transform-origin:50% -170px;
+  animation:vpHangSway 5.5s ease-in-out infinite;
+}
+
+/* -- the two support threads holding the scroll's top corners --
+   thicker twisted-cord rope: two diagonal fibre gradients (light +
+   dark) crossed over a base tan gradient give it a braided, roundish
+   look instead of a flat hairline. The thread is a CHILD of
+   .vscroll-wrap, and the wrap's pivot (above) sits at the thread's
+   own fixed top end -- so as the wrap swings, the thread's top stays
+   put and the card swings beneath it, with the thread visibly
+   tilting along the exact same arc as the card the whole way down.
+   A small synced stretch (same 5.5s beat as the swing, no separate
+   timing) adds a touch of rope tension at the top, fixed anchor. -- */
+.vthread{
+  position:absolute;
+  top:-170px;
+  width:4px;
+  height:170px;
+  z-index:2;
+  border-radius:2px;
+  transform-origin:top center;
+  background:
+    repeating-linear-gradient(52deg, rgba(255,255,255,.42) 0 1px, transparent 1px 3.5px),
+    repeating-linear-gradient(-52deg, rgba(0,0,0,.2) 0 1px, transparent 1px 3.5px),
+    linear-gradient(to bottom, rgba(230,196,140,.15), rgba(224,193,132,.9) 14%, rgba(178,138,72,.95) 86%, rgba(140,101,49,1));
+  box-shadow:
+    inset -1.5px 0 2px rgba(58,36,12,.5),
+    inset 1px 0 1.5px rgba(255,241,208,.55),
+    0 0 3px rgba(0,0,0,.2);
+  animation:vThreadTension 5.5s ease-in-out infinite;
+}
+.vthread::after{
+  content:'';
+  position:absolute;left:50%;bottom:-4px;
+  width:9px;height:9px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #f8e3a8, #8a6425 75%);
+  box-shadow:0 3px 5px rgba(0,0,0,.4), inset 0 1px 1px rgba(255,250,222,.6);
+}
+.vthread-l{left:21px;}
+.vthread-r{right:21px;}
+
+@keyframes vpHangSway{
+  0%,100%{transform:rotate(-2.2deg);}
+  50%{transform:rotate(2.2deg);}
+}
+@keyframes vThreadTension{
+  0%,100%{transform:scaleY(1.012);}
+  50%{transform:scaleY(1);}
+}
+
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* -- cord + brass lotus medallion hanging beside the scroll --
+   this little pendant is attached to the card itself (not the fixed
+   anchor), so it already gets carried along by the card's swing as
+   a child of .vscroll-wrap. On top of that shared motion it gets its
+   own small extra swing, on the SAME 5.5s beat as the card (just a
+   touch more amplitude, since it's lighter and swings a bit more
+   freely off the card's edge) so it reads as part of one connected
+   moving object rather than a separate, out-of-sync animation. -- */
+.vscroll-hang{
+  position:absolute;
+  top:14px;right:-16px;
+  z-index:4;
+  display:flex;flex-direction:column;align-items:center;
+  transform-origin:top center;
+  animation:vpFadeDown .9s .5s var(--ease, ease) both,
+            vCordSway 5.5s ease-in-out infinite;
+}
+.vscroll-cord{
+  width:5px;height:54px;
+  border-radius:2.5px;
+  background:
+    repeating-linear-gradient(50deg, rgba(255,255,255,.42) 0 1px, transparent 1px 3.5px),
+    repeating-linear-gradient(-50deg, rgba(0,0,0,.22) 0 1px, transparent 1px 3.5px),
+    linear-gradient(to bottom,#8a6425,#e0b567 45%,#8a6425);
+  box-shadow:
+    0 0 4px rgba(0,0,0,.25),
+    inset -1.5px 0 2px rgba(50,30,8,.55),
+    inset 1px 0 1.5px rgba(255,241,208,.5);
+}
+@keyframes vCordSway{
+  0%,100%{transform:rotate(-3deg);}
+  50%{transform:rotate(3deg);}
+}
+.vscroll-medallion{
+  width:28px;height:28px;
+  margin-top:-2px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%, #caa25a, #7c5424 72%, #4a3115);
+  border:2px solid var(--vp-muted-gold);
+  box-shadow:0 6px 14px rgba(0,0,0,.4), inset 0 2px 3px rgba(255,236,190,.4), inset 0 -3px 6px rgba(0,0,0,.5);
+  color:#f6e7bd;
+}
+.vscroll-medallion svg{width:13px;height:13px;}
+.vscroll-medallion::after{
+  content:'';
+  position:absolute;
+}
+
+/* -- the scroll itself -- */
+.vscroll{
+  position:relative;
+  filter:drop-shadow(0 34px 46px rgba(10,10,5,.45));
+  animation:vpSlideUp .9s .1s var(--ease, ease) both;
+}
+
+.vscroll-rod{
+  position:relative;
+  height:13px;
+  margin:0 -8px;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.09) 0 2px, transparent 2px 10px),
+    linear-gradient(180deg,#c9945a 0%,#8a5f30 45%,#5a3a1a 100%);
+  border-radius:7px;
+  box-shadow:inset 0 2px 3px rgba(255,224,170,.45), inset 0 -4px 6px rgba(0,0,0,.5), 0 4px 10px rgba(0,0,0,.35);
+}
+.vscroll-rod-top{margin-bottom:-2px;animation:vpFadeIn .7s .35s var(--ease, ease) both;}
+.vscroll-rod-bottom{margin-top:-2px;animation:vpFadeIn .7s .5s var(--ease, ease) both;}
+.vscroll-finial{
+  position:absolute;top:50%;
+  width:10px;height:18px;
+  transform:translateY(-50%);
+  border-radius:5px;
+  background:radial-gradient(circle at 35% 30%,#d9ab68,#7c5424 70%,#4a3115);
+  box-shadow:0 3px 8px rgba(0,0,0,.45), inset 0 1px 2px rgba(255,236,190,.5);
+}
+.vscroll-finial-l{left:-5px;}
+.vscroll-finial-r{right:-5px;}
+
+/* -- parchment body -- */
+.vscroll-body{
+  position:relative;
+  padding:16px 16px 14px;
+  background:linear-gradient(to bottom, var(--vp-p1), var(--vp-p2), var(--vp-p3));
+  border-left:2px solid var(--vp-dark-brown);
+  border-right:2px solid var(--vp-dark-brown);
+  box-shadow:
+    inset 0 0 0 1px rgba(177,138,69,.5),
+    inset 0 0 42px rgba(70,40,15,.28),
+    inset 0 16px 26px -20px rgba(70,40,15,.6),
+    inset 0 -16px 26px -20px rgba(70,40,15,.6);
+}
+.vscroll-body::before{
+  content:'';
+  position:absolute;inset:0;
+  pointer-events:none;
+  opacity:.5;
+  background:repeating-linear-gradient(115deg, rgba(255,255,255,.12) 0 1px, transparent 1px 7px);
+}
+
+.vscroll-corner{
+  position:absolute;
+  width:24px;height:24px;
+  opacity:.5;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' fill='none' stroke='%2329452d' stroke-width='1.3' stroke-linecap='round'><path d='M4 4c9 1 16 3 21 8s7 12 8 21'/><path d='M9 9c4 3 6 7 6 12M9 9c3 4 4 8 3 13'/><path d='M18 18c4 2 6 6 6 10M18 18c2 4 2 8 0 12'/><path d='M27 27c4 1 7 4 8 8'/></svg>");
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.corner-tl{top:7px;left:7px;}
+.corner-tr{top:7px;right:7px;transform:scaleX(-1);}
+.corner-bl{bottom:7px;left:7px;transform:scaleY(-1);}
+.corner-br{bottom:7px;right:7px;transform:scale(-1,-1);}
+
+/* -- header -- */
+.vscroll-header{position:relative;z-index:1;text-align:center;margin-bottom:10px;animation:vpFadeIn .7s .55s var(--ease, ease) both;}
+.vscroll-lotus{display:inline-flex;color:var(--vp-forest);margin-bottom:4px;}
+.vscroll-lotus svg{width:15px;height:15px;}
+.vscroll-body .vscroll-eyebrow{
+  font-family:var(--font-body);
+  font-size:.54rem;
+  font-weight:600;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--vp-gold);
+  margin-bottom:4px;
+}
+.vscroll-body .vscroll-title{
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(1.02rem,1.4vw,1.2rem);
+  line-height:1.15;
+  color:var(--vp-dark-brown);
+  margin-bottom:4px;
+}
+.vscroll-body .vscroll-sub{
+  font-size:.7rem;
+  color:#5c3d20;
+  max-width:230px;
+  margin:0 auto;
+  line-height:1.42;
+}
+.vscroll-divider{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;color:var(--vp-gold);}
+.vscroll-divider span{width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--vp-gold));}
+.vscroll-divider span:last-child{background:linear-gradient(90deg,var(--vp-gold),transparent);}
+.vscroll-divider svg{width:8px;height:8px;flex-shrink:0;}
+.vscroll-divider.small{margin:10px 0 8px;}
+
+/* sequential field reveal */
+#hero-enquiry-form{position:relative;z-index:1;}
+.vscroll-grid .vfield{animation:vpFadeIn .6s var(--ease, ease) both;}
+.vscroll-grid .vfield:nth-child(1){animation-delay:.62s;}
+.vscroll-grid .vfield:nth-child(2){animation-delay:.68s;}
+.vscroll-grid .vfield:nth-child(3){animation-delay:.74s;}
+.vscroll-grid .vfield:nth-child(4){animation-delay:.8s;}
+.vfield-full{animation:vpFadeIn .6s .86s var(--ease, ease) both;}
+.vfield-full.vfield-textarea{animation-delay:.92s;}
+.vscroll-cta{animation:vpFadeIn .6s .98s var(--ease, ease) both;}
+.vscroll-badges,.vscroll-divider.small,.vscroll-body .vscroll-tagline{animation:vpFadeIn .7s 1.05s var(--ease, ease) both;}
+
+/* -- form grid & fields -- */
+.vscroll-grid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px 7px;
+  margin-bottom:7px;
+}
+.vfield{position:relative;z-index:1;margin-bottom:7px;}
+.vscroll-grid .vfield{margin-bottom:0;}
+.vfield-full{grid-column:1 / -1;}
+
+.vfield-box{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:34px;
+  background:rgba(248,240,220,.35);
+  border:1px solid rgba(100,70,30,.45);
+  border-radius:6px;
+  transition:border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.vfield-box:focus-within{
+  border-color:#9b6b2f;
+  box-shadow:0 0 0 3px rgba(155,107,47,.14);
+  background:rgba(248,240,220,.6);
+}
+.vfield.invalid .vfield-box{border-color:#a8402a;}
+.vfield.invalid .vfield-box:focus-within{box-shadow:0 0 0 3px rgba(168,64,42,.14);}
+
+.vfield-icon{
+  flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;
+  width:13px;height:13px;
+  margin-left:10px;margin-right:6px;
+  color:var(--vp-gold);
+}
+.vfield-icon svg{width:12px;height:12px;}
+
+.vfield-box input,
+.vfield-box select,
+.vfield-box textarea{
+  flex:1 1 auto;
+  width:100%;
+  height:100%;
+  padding:8px 10px 8px 0;
+  background:transparent;
+  border:none;
+  outline:none;
+  font-family:var(--font-body);
+  font-size:.68rem;
+  color:var(--vp-text);
+  -webkit-appearance:none;
+  appearance:none;
+}
+.vfield-box input::placeholder,
+.vfield-box textarea::placeholder{color:var(--vp-muted);opacity:.85;}
+.vfield-box input[type="date"]{color:var(--vp-text);}
+.vfield-box select{
+  cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23b18a45' d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right 10px center;
+  background-size:11px;
+  padding-right:26px;
+}
+.vfield-box select:invalid{color:var(--vp-muted);}
+
+.vfield-textarea .vfield-box{
+  height:auto;min-height:48px;
+  align-items:flex-start;
+  padding:8px 0;
+}
+.vfield-textarea .vfield-icon{margin-top:1px;}
+.vfield-textarea textarea{
+  resize:none;
+  height:100%;
+  padding-top:0;padding-bottom:0;
+  line-height:1.4;
+}
+
+.vfield-error{
+  display:none;
+  margin-top:3px;
+  padding-left:2px;
+  font-size:.6rem;
+  color:#a8402a;
+}
+.vfield.invalid .vfield-error{display:block;}
+
+/* -- CTA -- */
+.vscroll-cta{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:100%;height:36px;
+  margin-top:3px;
+  background:var(--vp-forest);
+  border:1px solid var(--vp-gold);
+  border-radius:6px;
+  color:#f6e7bd;
+  font-family:var(--font-head);
+  font-size:.78rem;
+  letter-spacing:.3px;
+  cursor:pointer;
+  transition:.3s ease;
+}
+.vscroll-cta svg{width:12px;height:12px;transition:transform .3s ease;}
+.vscroll-cta:hover{
+  background:var(--vp-forest-dark);
+  border-color:var(--vp-muted-gold);
+  transform:translateY(-2px);
+  box-shadow:0 14px 26px -10px rgba(0,0,0,.55);
+}
+.vscroll-cta:hover svg{transform:translateX(4px);}
+.vscroll-cta:disabled{opacity:.7;cursor:default;transform:none;}
+.vscroll-cta:focus-visible{outline:2px solid var(--vp-gold);outline-offset:3px;}
+
+/* -- three-icon strip -- */
+.vscroll-badges{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:4px;
+  margin-top:10px;
+}
+.vbadge{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  text-align:center;
+  color:var(--vp-dark-brown);
+  font-size:.54rem;
+  line-height:1.25;
+}
+.vbadge svg{width:14px;height:14px;color:var(--vp-forest);}
+
+.vscroll-body .vscroll-tagline{
+  position:relative;z-index:1;
+  text-align:center;
+  font-family:var(--font-head);
+  font-size:.62rem;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:#5c3d20;
+}
+
+/* -- success state -- */
+.vscroll-success{
+  display:none;
+  position:relative;z-index:1;
+  text-align:center;
+  padding:6px 4px 2px;
+}
+.vscroll-success.active{display:block;}
+.vscroll-success-check{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;
+  margin-bottom:8px;
+  border-radius:50%;
+  background:var(--vp-forest);
+  color:#f6e7bd;
+  box-shadow:0 10px 22px -8px rgba(41,69,45,.6);
+}
+.vscroll-success-check svg{width:16px;height:16px;}
+.vscroll-success h3{
+  font-family:var(--font-head);
+  font-size:.98rem;
+  color:var(--vp-dark-brown);
+  margin-bottom:5px;
+}
+.vscroll-success p{
+  font-size:.7rem;
+  color:var(--vp-muted);
+  max-width:230px;
+  margin:0 auto 10px;
+  line-height:1.5;
+}
+.vscroll-reset{
+  background:transparent;
+  border:1px solid var(--vp-gold);
+  color:var(--vp-dark-brown);
+  border-radius:6px;
+  padding:7px 14px;
+  font-family:var(--font-body);
+  font-size:.68rem;
+  letter-spacing:.3px;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.vscroll-reset:hover{background:rgba(177,138,69,.14);border-color:var(--vp-muted-gold);}
+
+/* -- entrance sequence -- */
+@keyframes vpSlideUp{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:translateY(0);}}
+@keyframes vpFadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes vpFadeDown{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
+@media (prefers-reduced-motion:reduce){
+  .vscroll,.vscroll-rod-top,.vscroll-rod-bottom,.vscroll-header,.vscroll-hang{animation:none;}
+  .vscroll-wrap{animation:none;}
+  .vthread{animation:none;}
+}
