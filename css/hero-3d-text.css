@@ -1,0 +1,127 @@
+/* =========================================================
+   HERO SECTION — 3D TEXT (laptop / desktop only, >=1024px)
+   Carved-gold extrusion effect using layered text-shadow.
+   Keeps the source markup/colors untouched below 1024px.
+   ========================================================= */
+@media (min-width: 1024px) {
+
+  /* ---- Eyebrow: "A QUIETER WAY OF LIVING" ---- */
+  body[data-page="home"] .vh-hero .vh-eyebrow-a,
+  body[data-page="home"] .vh-hero .vh-eyebrow-b {
+    color: #1c130a;
+    text-shadow:
+      0 1px 0   #f2ddac,
+      0 2px 0   #e6c88a,
+      0 3px 0   #d8b46c,
+      0 4px 1px rgba(28,19,10,.22),
+      0 6px 5px rgba(28,19,10,.22),
+      0 0 26px rgba(255,252,244,.65);
+  }
+
+  /* ---- Main heading: "Traditional Ayurveda," ---- */
+  body[data-page="home"] .vh-hero .vh-hero-heading-main {
+    color: #1a1109;
+    text-shadow:
+      0 1px 0   #f6e4b8,
+      0 2px 0   #eed6a0,
+      0 3px 0   #e4c586,
+      0 4px 0   #d8b26c,
+      0 5px 0   #cb9f56,
+      0 6px 0   #bd8c44,
+      0 7px 0   #ac7935,
+      0 8px 1px  rgba(26,17,9,.22),
+      0 10px 5px rgba(26,17,9,.26),
+      0 15px 14px rgba(26,17,9,.28),
+      0 22px 26px rgba(26,17,9,.22),
+      0 0 34px rgba(255,252,244,.6);
+  }
+
+  /* ---- Accent line: "by the bay of Alappuzha." ---- */
+  body[data-page="home"] .vh-hero .vh-hero-heading-accent {
+    color: #1a1109;
+    text-shadow:
+      0 1px 0   #f2dfb2,
+      0 2px 0   #e7cd94,
+      0 3px 0   #dbba78,
+      0 4px 0   #cea75f,
+      0 5px 1px rgba(26,17,9,.2),
+      0 7px 4px rgba(26,17,9,.24),
+      0 11px 12px rgba(26,17,9,.24),
+      0 0 30px rgba(255,252,244,.6);
+  }
+
+  /* ---- Subheading paragraph ---- */
+  body[data-page="home"] .vh-hero .vh-hero-sub {
+    color: #201509;
+    text-shadow:
+      0 1px 0   #eeddb2,
+      0 2px 0   #e2c894,
+      0 3px 1px rgba(32,21,9,.18),
+      0 5px 6px rgba(32,21,9,.22),
+      0 0 24px rgba(255,252,244,.6);
+  }
+
+  /* ---- Feature labels: Authentic Ayurveda / Serene Location / Personalised Care ---- */
+  body[data-page="home"] .vh-hero .vh-hero-feature span {
+    color: #1c130a;
+    text-shadow:
+      0 1px 0   #efdead,
+      0 2px 0   #e2c88c,
+      0 3px 1px rgba(28,19,10,.2),
+      0 5px 5px rgba(28,19,10,.22),
+      0 0 20px rgba(255,252,244,.55);
+  }
+  body[data-page="home"] .vh-hero .vh-hero-feature svg {
+    filter:
+      drop-shadow(0 1px 0 #e2c88c)
+      drop-shadow(0 3px 3px rgba(28,19,10,.28))
+      drop-shadow(0 0 10px rgba(255,252,244,.6));
+  }
+
+  /* ---- Side rail: Heal / Rest / Rebalance ---- */
+  body[data-page="home"] .vh-hero .vh-hero-locale {
+    color: #fbf6ea;
+    text-shadow:
+      0 1px 0 rgba(0,0,0,.35),
+      0 2px 0 rgba(0,0,0,.28),
+      0 3px 4px rgba(0,0,0,.35),
+      0 0 18px rgba(0,0,0,.3);
+  }
+}
+
+/* =========================================================
+   HERO SECTION — MOBILE TEXT (<=640px)
+   White text with a soft rounded black shadow/halo,
+   so it stays legible directly over the photo.
+   ========================================================= */
+@media (max-width: 640px) {
+
+  body[data-page="home"] .vh-hero .vh-eyebrow-a,
+  body[data-page="home"] .vh-hero .vh-eyebrow-b {
+    color: #fff;
+    text-shadow:
+      0 0 2px rgba(0,0,0,.9),
+      0 0 5px rgba(0,0,0,.75),
+      0 1px 3px rgba(0,0,0,.65),
+      0 0 14px rgba(0,0,0,.45);
+  }
+
+  body[data-page="home"] .vh-hero .vh-hero-heading-main,
+  body[data-page="home"] .vh-hero .vh-hero-heading-accent {
+    color: #fff;
+    text-shadow:
+      0 0 3px rgba(0,0,0,.95),
+      0 0 7px rgba(0,0,0,.8),
+      0 2px 5px rgba(0,0,0,.65),
+      0 0 22px rgba(0,0,0,.5);
+  }
+
+  body[data-page="home"] .vh-hero .vh-hero-sub {
+    color: #fff;
+    text-shadow:
+      0 0 2px rgba(0,0,0,.9),
+      0 0 5px rgba(0,0,0,.7),
+      0 1px 4px rgba(0,0,0,.6),
+      0 0 16px rgba(0,0,0,.4);
+  }
+}
