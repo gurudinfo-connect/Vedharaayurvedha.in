@@ -6,7 +6,6 @@
   var MOBILE_BREAKPOINT = 1023;
   var SCROLL_THRESHOLD = 24;   // ignore tiny finger jitters
   var TOP_GUARD = 80;          // don't trigger right at the very top of the page
-  var REARM_COOLDOWN = 600;    // ms after closing before it can become eligible again
 
   function isMobile() {
     return window.innerWidth <= MOBILE_BREAKPOINT;
@@ -14,14 +13,14 @@
 
   var isOpen = false;
   var submitted = false;
-  var scrolledDown = false;    // user has made a deliberate downward scroll since last shown/closed
+  var triggeredOnce = false;   // once shown (or closed), never auto-open again this visit
   var directionAnchor = window.scrollY || window.pageYOffset || 0;
-  var cooldownUntil = 0;
   var ticking = false;
 
   function openModal() {
     if (isOpen) return;
     isOpen = true;
+    triggeredOnce = true;
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -31,8 +30,6 @@
     isOpen = false;
     overlay.classList.remove('active');
     document.body.style.overflow = '';
-    scrolledDown = false;
-    cooldownUntil = Date.now() + REARM_COOLDOWN;
   }
 
   closeBtn.addEventListener('click', closeModal);
@@ -57,7 +54,7 @@
   function handleScroll() {
     var y = window.scrollY || window.pageYOffset || 0;
 
-    if (!isMobile() || submitted || isOpen || Date.now() < cooldownUntil) {
+    if (!isMobile() || submitted || isOpen || triggeredOnce) {
       directionAnchor = y;
       ticking = false;
       return;
@@ -66,14 +63,13 @@
     var delta = y - directionAnchor;
 
     if (delta > SCROLL_THRESHOLD) {
-      // deliberate scroll down — arm the trigger
-      scrolledDown = true;
-      directionAnchor = y;
-    } else if (delta < -SCROLL_THRESHOLD) {
-      // deliberate scroll up — fire only if they'd scrolled down first
-      if (scrolledDown && y > TOP_GUARD) {
+      // deliberate scroll down — fire once past the top guard
+      if (y > TOP_GUARD) {
         openModal();
       }
+      directionAnchor = y;
+    } else if (delta < -SCROLL_THRESHOLD) {
+      // deliberate scroll up — just update the anchor, no trigger
       directionAnchor = y;
     }
 
