@@ -6,87 +6,122 @@
 <title>The Wisdom of Ayurveda | Vedhara Ayurveda</title>
 <meta name="description" content="Learn about Ayurveda, its holistic philosophy, and the Vata, Pitta and Kapha doshas at Vedhara Ayurveda.">
 <link rel="canonical" href="https://www.vedharaayurveda.com/ayurveda.html">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/source-navbar.css">
+  <link rel="stylesheet" href="css/source-colors.css">
+  <link rel="stylesheet" href="css/final-source-colors.css">
 </head>
 <body>
 <div class="page-loader"><div class="loader-leaf"></div></div>
 
 <!-- ============ TOP INFO STRIP ============ -->
-<div class="topbar">
-  <div class="container">
-    <p class="topbar-loc">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.7 7-12.3A7 7 0 1 0 5 8.7C5 14.3 12 21 12 21Z"/><circle cx="12" cy="8.6" r="2.3"/></svg>
-      Vedhara Ayurveda &middot; Alappuzha, Kerala
-    </p>
-    <a href="tel:+919746797786" class="topbar-phone">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4h3.6l1.7 4.4-2.2 1.6a11.4 11.4 0 0 0 5.4 5.4l1.6-2.2 4.4 1.7v3.6a1.7 1.7 0 0 1-1.8 1.7A16.6 16.6 0 0 1 2.8 5.8 1.7 1.7 0 0 1 4.5 4Z"/></svg>
-      +91 97467 97786
-    </a>
-  </div>
 </div>
 
 <!-- ============ NAVBAR ============ -->
-<header class="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo-mark.png" alt="" class="nav-logo-mark">
-      <img src="assets/images/logo-wordmark.png" alt="Vedhara Ayurveda" class="nav-logo-word-img">
-    </a>
-        <nav class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
+<header class="site-header">
+    <nav class="navbar container section-pad" aria-label="Primary">
+      <a class="logo-link" href="index.html" aria-label="Vedhara Ayurveda Yoga Center — Home">
+        <img src="assets/images/vedhara-logo.png" alt="Vedhara Ayurveda" />
+      </a>
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-toggle" type="button">Vedhara<span class="caret"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg></span></button>
-        <div class="nav-dropdown-menu">
-          <a href="about.html">About</a>
-          <a href="yoga.html">Vedhara Yoga</a>
-          <a href="contact.html">Contact</a>
-        </div>
+      <ul class="nav-desktop">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="yoga.html">Yoga</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="treatments.html" aria-haspopup="true" aria-expanded="false">
+            Treatment
+            <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+
+          <div class="dropdown">
+            <ul class="dropdown-inner">
+              <li><a href="panchakarma.html">Panchakarma</a></li>
+              <li><a href="rejuvenation.html">Rejuvenation Treatment</a></li>
+              <li><a href="destress.html">De-Stress Treatment</a></li>
+              <li><a href="treatments.html#relaxation">Relaxation Treatment</a></li>
+              <li><a href="treatments.html#weight-loss">Weight Loss Treatment</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ayurveda.html">Ayurveda</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <a class="btn btn-book" href="booking.html">Book Consultation</a>
       </div>
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-toggle" type="button">Therapies<span class="caret"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg></span></button>
-        <div class="nav-dropdown-menu has-desc">
-          <a href="panchakarma.html" class="nav-drop-item">
-            <span class="ndi-title">Panchakarma Therapy</span>
-            <span class="ndi-desc">Classical Ayurvedic cleansing to restore balance and renew the body.</span>
-          </a>
-          <a href="rejuvenation.html" class="nav-drop-item">
-            <span class="ndi-title">Rejuvenation Therapy</span>
-            <span class="ndi-desc">Warm oil massage and rituals to restore energy and deep relaxation.</span>
-          </a>
-          <a href="destress.html" class="nav-drop-item">
-            <span class="ndi-title">De-Stress Therapy</span>
-            <span class="ndi-desc">Calming therapies to ease tension and quiet an overactive mind.</span>
-          </a>
-          <a href="treatments.html#weight-loss" class="nav-drop-item">
-            <span class="ndi-title">Weight Loss Treatment</span>
-            <span class="ndi-desc">Personalized programme supporting healthy, sustainable weight management.</span>
-          </a>
-          <a href="treatments.html#relaxation" class="nav-drop-item">
-            <span class="ndi-title">Relaxation Treatment</span>
-            <span class="ndi-desc">Soothing massage and warm oils to help body and mind unwind.</span>
-          </a>
-        </div>
-      </div>
-
-      <a href="ayurveda.html">Ayurveda</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </nav>
-    <div class="nav-cta">
-      <a href="booking.html" class="btn btn-primary">Book Consultation</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-<div class="nav-overlay" id="navOverlay"></div>
 
+    <div class="mobile-nav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <div class="mobile-nav-header">
+        <a class="logo-link" href="index.html">
+          <img src="assets/images/vedhara-logo.png" alt="Vedhara Ayurveda" style="height:2.25rem" />
+        </a>
+        <button class="mobile-nav-close" aria-label="Close menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="about.html">About</a>
+          </li>
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="yoga.html">Yoga</a>
+          </li>
+          <li>
+            <button class="mobile-nav-trigger" aria-expanded="false" aria-controls="mobile-panel-0">
+              Treatment
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+
+            <div class="mobile-submenu" id="mobile-panel-0">
+              <div class="mobile-submenu-inner">
+                <ul>
+                  <li><a href="panchakarma.html">Panchakarma</a></li>
+                  <li><a href="rejuvenation.html">Rejuvenation Treatment</a></li>
+                  <li><a href="destress.html">De-Stress Treatment</a></li>
+                  <li><a href="treatments.html#relaxation">Relaxation Treatment</a></li>
+                  <li><a href="treatments.html#weight-loss">Weight Loss Treatment</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="ayurveda.html">Ayurveda</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-nav-footer">
+        <a class="btn btn-primary" href="booking.html" style="margin-left:auto">Book Consultation</a>
+      </div>
+    </div>
+  </header>
 <section class="page-hero">
-  <div class="page-hero-media"><img src="assets/images/gallery/ayurveda-elder-preparation.jpg" alt="Ayurveda philosophy"></div>
+  <div class="page-hero-media"><img loading="eager" decoding="async" fetchpriority="high" src="assets/images/gallery/ayurveda-elder-preparation.jpg" alt="Ayurveda philosophy"></div>
   <div class="container">
     <p class="breadcrumb"><a href="index.html">Home</a> / Ayurveda</p>
     <h1>The Wisdom of Ayurveda</h1>
@@ -121,7 +156,7 @@
   <div class="container">
     <div class="intro-grid">
       <div class="intro-media reveal-left">
-        <img src="assets/images/gallery/ayurveda-herbal-prep.jpg" alt="Traditional Ayurvedic herbs and natural preparation">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/ayurveda-herbal-prep.jpg" alt="Traditional Ayurvedic herbs and natural preparation">
         <div class="ring"></div>
       </div>
       <div class="reveal-right">
@@ -163,8 +198,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="footer-brand-logo" aria-label="Vedhara Ayurveda - Go to homepage">
-          <img src="assets/images/logo-mark.png" alt="" class="nav-logo-mark">
-          <img src="assets/images/logo-wordmark.png" alt="Vedhara Ayurveda" class="nav-logo-word-img">
+          <img loading="lazy" decoding="async" src="assets/images/logo-mark.png" alt="" class="nav-logo-mark">
+          <img loading="lazy" decoding="async" src="assets/images/logo-wordmark.png" alt="Vedhara Ayurveda" class="nav-logo-word-img">
         </a>
         <p>Ancient Kerala Wisdom. A Journey Back to Balance. Traditional Ayurveda, natural healing and inner balance in the heart of Kerala.</p>
         <div class="footer-social">
@@ -181,7 +216,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="treatments.html">Treatments</a></li>
           <li><a href="yoga.html">Yoga</a></li>
-          <li><a href="kalari.html">Kalari</a></li>
           <li><a href="ayurveda.html">Ayurveda</a></li>
           <li><a href="index.html#wellness-journey">Wellness Journey</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -195,7 +229,6 @@
           <li><a href="destress.html">De-Stress</a></li>
           <li><a href="treatments.html#weight-loss">Weight Wellness</a></li>
           <li><a href="treatments.html#relaxation">Relaxation</a></li>
-          <li><a href="kalari.html">Kalari</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -232,8 +265,10 @@
   <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3C9.38 3 4 8.35 4 14.95c0 2.35.66 4.55 1.8 6.42L4 29l7.86-1.75a13.1 13.1 0 0 0 4.15.68c6.63 0 12.01-5.35 12.01-11.95C28.02 8.35 22.64 3 16.01 3Zm0 21.77c-1.36 0-2.7-.36-3.88-1.04l-.28-.16-4.66 1.04 1.06-4.52-.18-.29a9.7 9.7 0 0 1-1.5-5.85c0-5.4 4.4-9.78 9.44-9.78 5.04 0 9.44 4.38 9.44 9.78s-4.4 9.82-9.44 9.82Zm5.4-7.34c-.29-.15-1.73-.85-2-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.84.11.56-.08 1.73-.71 1.98-1.39.24-.68.24-1.27.17-1.39-.07-.12-.26-.2-.55-.34Z"/></svg>
 </a>
 <button class="back-top" aria-label="Back to top">↑</button>
+<script src="js/ai-chat-widget.js" defer></script>
 <script src="js/main.js"></script>
 <script src="js/animations.js"></script>
 
+  <script src="js/source-navbar.js"></script>
 </body>
 </html>

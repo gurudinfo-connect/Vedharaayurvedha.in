@@ -10,11 +10,17 @@
 <meta property="og:description" content="Traditional Ayurveda. Natural Healing. Inner Balance. Experience Kerala's authentic healing traditions at Vedhara.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/images/logo.png">
-<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link rel="icon" href="assets/images/favicon-32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Manrope:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/booking-form.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/home-transfer.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,269 +37,289 @@
   "email": "vedharabeachhome@gmail.com"
 }
 </script>
+  <link rel="stylesheet" href="css/source-navbar.css">
+  <link rel="stylesheet" href="css/source-colors.css">
+  <link rel="stylesheet" href="css/final-source-colors.css">
 </head>
-<body>
+<body data-page="home">
 
 <div class="page-loader"><div class="loader-leaf"></div></div>
 
 <!-- ============ TOP INFO STRIP ============ -->
-<div class="topbar">
-  <div class="container">
-    <p class="topbar-loc">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.7 7-12.3A7 7 0 1 0 5 8.7C5 14.3 12 21 12 21Z"/><circle cx="12" cy="8.6" r="2.3"/></svg>
-      Vedhara Ayurveda &middot; Alappuzha, Kerala
-    </p>
-    <a href="tel:+919746797786" class="topbar-phone">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4h3.6l1.7 4.4-2.2 1.6a11.4 11.4 0 0 0 5.4 5.4l1.6-2.2 4.4 1.7v3.6a1.7 1.7 0 0 1-1.8 1.7A16.6 16.6 0 0 1 2.8 5.8 1.7 1.7 0 0 1 4.5 4Z"/></svg>
-      +91 97467 97786
-    </a>
-  </div>
-</div>
+<header class="site-header">
+    <nav class="navbar container section-pad" aria-label="Primary">
+      <a class="logo-link" href="index.html" aria-label="Vedhara Ayurveda Yoga Center — Home">
+        <img src="assets/images/vedhara-logo.png" alt="Vedhara Ayurveda" />
+      </a>
 
-<!-- ============ NAVBAR ============ -->
-<header class="navbar">
-  <div class="container">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo-mark.png" alt="" class="nav-logo-mark">
-      <img src="assets/images/logo-wordmark.png" alt="Vedhara Ayurveda" class="nav-logo-word-img">
-    </a>
-        <nav class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
+      <ul class="nav-desktop">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="yoga.html">Yoga</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="treatments.html" aria-haspopup="true" aria-expanded="false">
+            Treatment
+            <svg class="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-toggle" type="button">Vedhara<span class="caret"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg></span></button>
-        <div class="nav-dropdown-menu">
-          <a href="about.html">About</a>
-          <a href="yoga.html">Vedhara Yoga</a>
-          <a href="contact.html">Contact</a>
-        </div>
+          <div class="dropdown">
+            <ul class="dropdown-inner">
+              <li><a href="panchakarma.html">Panchakarma</a></li>
+              <li><a href="rejuvenation.html">Rejuvenation Treatment</a></li>
+              <li><a href="destress.html">De-Stress Treatment</a></li>
+              <li><a href="treatments.html#relaxation">Relaxation Treatment</a></li>
+              <li><a href="treatments.html#weight-loss">Weight Loss Treatment</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ayurveda.html">Ayurveda</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <a class="btn btn-book" href="booking.html">Book Consultation</a>
       </div>
 
-      <div class="nav-dropdown">
-        <button class="nav-drop-toggle" type="button">Therapies<span class="caret"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg></span></button>
-        <div class="nav-dropdown-menu has-desc">
-          <a href="panchakarma.html" class="nav-drop-item">
-            <span class="ndi-title">Panchakarma Therapy</span>
-            <span class="ndi-desc">Classical Ayurvedic cleansing to restore balance and renew the body.</span>
-          </a>
-          <a href="rejuvenation.html" class="nav-drop-item">
-            <span class="ndi-title">Rejuvenation Therapy</span>
-            <span class="ndi-desc">Warm oil massage and rituals to restore energy and deep relaxation.</span>
-          </a>
-          <a href="destress.html" class="nav-drop-item">
-            <span class="ndi-title">De-Stress Therapy</span>
-            <span class="ndi-desc">Calming therapies to ease tension and quiet an overactive mind.</span>
-          </a>
-          <a href="treatments.html#weight-loss" class="nav-drop-item">
-            <span class="ndi-title">Weight Loss Treatment</span>
-            <span class="ndi-desc">Personalized programme supporting healthy, sustainable weight management.</span>
-          </a>
-          <a href="treatments.html#relaxation" class="nav-drop-item">
-            <span class="ndi-title">Relaxation Treatment</span>
-            <span class="ndi-desc">Soothing massage and warm oils to help body and mind unwind.</span>
-          </a>
-        </div>
-      </div>
-
-      <a href="ayurveda.html">Ayurveda</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </nav>
-    <div class="nav-cta">
-      <a href="booking.html" class="btn btn-primary">Book Consultation</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-<div class="nav-overlay" id="navOverlay"></div>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-media">
-    <picture>
-      <source media="(max-width:768px)" srcset="assets/images/hero-background-mobile.jpg">
-      <img src="assets/images/hero-background.jpg" alt="Kerala Ayurveda wellness retreat on the backwaters at sunset">
-    </picture>
-  </div>
-  <img class="hero-leaf leaf-a" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5 C20 20 20 70 50 95 C80 70 80 20 50 5Z' fill='none' stroke='%23b3893c' stroke-width='1.5'/></svg>" alt="">
-  <img class="hero-leaf leaf-b" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 5 C20 20 20 70 50 95 C80 70 80 20 50 5Z' fill='none' stroke='%23b3893c' stroke-width='1.5'/></svg>" alt="">
-
-  <!-- ============ HANGING THREADS ACROSS TOP OF HERO ============ -->
-  <div class="hero-threads" aria-hidden="true">
-    <span class="h-thread t1"></span>
-    <span class="h-thread t2"></span>
-    <span class="h-thread t3"></span>
-    <span class="h-thread t4"></span>
-    <span class="h-thread t5"></span>
-    <span class="h-thread t6"></span>
-    <span class="h-thread t7"></span>
-    <span class="h-thread t8"></span>
-    <span class="h-thread t9"></span>
-  </div>
-
-  <div class="container">
-    <div class="hero-content">
-      <p class="eyebrow">Embrace the science not the fad.</p>
-      <h1>Authentic Ayurveda, Rooted in Science and Tradition.</h1>
-      <p>At Vedhara,Experience wellness the way it was meant to be: intentional, personalized, and true to Kerala's healing heritage.</p>
-      <div class="hero-btns">
-        <a href="booking.html" class="btn btn-light">Begin Your Wellness Journey</a>
-        <a href="treatments.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.5);">Explore Our Therapies</a>
+    <div class="mobile-nav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <div class="mobile-nav-header">
+        <a class="logo-link" href="index.html">
+          <img src="assets/images/vedhara-logo.png" alt="Vedhara Ayurveda" style="height:2.25rem" />
+        </a>
+        <button class="mobile-nav-close" aria-label="Close menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
       </div>
-    </div>
-
-    <!-- ============ ANCIENT THALAPATHRA BOOKING SCROLL ============ -->
-    <div class="vscroll-wrap" id="vedharaScrollForm">
-
-      <span class="vthread vthread-l" aria-hidden="true"></span>
-      <span class="vthread vthread-r" aria-hidden="true"></span>
-
-      <div class="vscroll-hang" aria-hidden="true">
-        <span class="vscroll-cord"></span>
-        <span class="vscroll-medallion">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21c-4-2.4-7-5.7-7-9.8C5 7.5 8.1 4 12 4s7 3.5 7 7.2c0 4.1-3 7.4-7 9.8Z"/><path d="M12 8.5c-2 1.3-2 4.7 0 6 2-1.3 2-4.7 0-6Z"/></svg>
-        </span>
-      </div>
-
-      <div class="vscroll">
-        <div class="vscroll-rod vscroll-rod-top" aria-hidden="true">
-          <span class="vscroll-finial vscroll-finial-l"></span>
-          <span class="vscroll-finial vscroll-finial-r"></span>
-        </div>
-
-        <div class="vscroll-body">
-          <span class="vscroll-corner corner-tl" aria-hidden="true"></span>
-          <span class="vscroll-corner corner-tr" aria-hidden="true"></span>
-          <span class="vscroll-corner corner-bl" aria-hidden="true"></span>
-          <span class="vscroll-corner corner-br" aria-hidden="true"></span>
-
-          <div class="vscroll-header">
-            <span class="vscroll-lotus" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 20c-3.5-1.6-6-4.6-6-8.4C6 8 8.7 5 12 5s6 3 6 6.6c0 3.8-2.5 6.8-6 8.4Z"/><path d="M12 20c-1.6-2.4-1.6-6.7 0-9.4 1.6 2.7 1.6 7 0 9.4Z"/><path d="M6 12c1.8-1.3 4.2-1.3 6 0-1.8 1.3-4.2 1.3-6 0Z"/><path d="M18 12c-1.8-1.3-4.2-1.3-6 0 1.8 1.3 4.2 1.3 6 0Z"/></svg>
-            </span>
-            <p class="vscroll-eyebrow">Vedhara Ayurveda</p>
-            <h3 class="vscroll-title">Begin Your Wellness Journey</h3>
-            <p class="vscroll-sub">Experience authentic Ayurveda in the serene backwaters of Kerala.</p>
-            <div class="vscroll-divider" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4c-2 3-2 13 0 16 2-3 2-13 0-16Z"/></svg><span></span></div>
-          </div>
-
-          <form id="hero-enquiry-form" novalidate>
-            <div class="vscroll-grid">
-              <div class="vfield">
-                <label class="sr-only" for="hf-name">Full Name</label>
-                <div class="vfield-box">
-                  <span class="vfield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4.2"/></svg></span>
-                  <input type="text" id="hf-name" name="name" placeholder="Full Name *" autocomplete="name" required>
-                </div>
-                <span class="vfield-error">Please enter your full name.</span>
-              </div>
-
-              <div class="vfield">
-                <label class="sr-only" for="hf-email">Email Address</label>
-                <div class="vfield-box">
-                  <span class="vfield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="1.6"/><path d="m4 6.5 8 6.5 8-6.5"/></svg></span>
-                  <input type="email" id="hf-email" name="email" placeholder="Email Address *" autocomplete="email" required>
-                </div>
-                <span class="vfield-error">Please enter a valid email.</span>
-              </div>
-
-              <div class="vfield">
-                <label class="sr-only" for="hf-phone">Phone Number</label>
-                <div class="vfield-box">
-                  <span class="vfield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4h3.6l1.7 4.4-2.2 1.6a11.4 11.4 0 0 0 5.4 5.4l1.6-2.2 4.4 1.7v3.6a1.7 1.7 0 0 1-1.8 1.7A16.6 16.6 0 0 1 2.8 5.8 1.7 1.7 0 0 1 4.5 4Z"/></svg></span>
-                  <input type="tel" id="hf-phone" name="phone" placeholder="Phone Number *" autocomplete="tel" required>
-                </div>
-                <span class="vfield-error">Please enter a valid phone number.</span>
-              </div>
-
-              <div class="vfield">
-                <label class="sr-only" for="hf-date">Preferred Date</label>
-                <div class="vfield-box">
-                  <span class="vfield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="1.6"/><path d="M3.5 9.5h17M8 3v3M16 3v3"/></svg></span>
-                  <input type="text" id="hf-date" name="date" placeholder="Preferred Date" autocomplete="off" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-                </div>
-                <span class="vfield-error">Please choose a valid, upcoming date.</span>
-              </div>
-            </div>
-
-            <div class="vfield vfield-full">
-              <label class="sr-only" for="hf-treatment">Preferred Treatment</label>
-              <div class="vfield-box">
-                <span class="vfield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4.5c-8 0-14.5 5-15.5 12.5C12 18 19 12.5 20 4.5Z"/><path d="M5 20c3-4 6-7 12-11"/></svg></span>
-                <select id="hf-treatment" name="treatment" required>
-                  <option value="">Preferred Treatment</option>
-                  <option>Panchakarma</option>
-                  <option>Rejuvenation Therapy</option>
-                  <option>De-Stress Therapy</option>
-                  <option>Weight Loss Treatment</option>
-                  <option>Relaxation Treatment</option>
-                  <option>Abhyanga</option>
-                  <option>Shirodhara</option>
-                  <option>Ayurvedic Consultation</option>
-                  <option>Yoga &amp; Meditation</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <span class="vfield-error">Please select a treatment.</span>
-            </div>
-
-            <div class="vfield vfield-full vfield-textarea">
-              <label class="sr-only" for="hf-message">Your Message</label>
-              <div class="vfield-box">
-                <span class="vfield-icon vfield-icon-top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4.5c-8 0-14.5 5-15.5 12.5C12 18 19 12.5 20 4.5Z"/><path d="M5 20c3-4 6-7 12-11"/></svg></span>
-                <textarea id="hf-message" name="message" rows="3" placeholder="Your Message (Optional)"></textarea>
-              </div>
-            </div>
-
-            <button type="submit" class="vscroll-cta" id="hero-enquiry-submit">
-              <span>Send Enquiry</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="mobile-nav-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="index.html">Home</a>
+          </li>
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="about.html">About</a>
+          </li>
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="yoga.html">Yoga</a>
+          </li>
+          <li>
+            <button class="mobile-nav-trigger" aria-expanded="false" aria-controls="mobile-panel-0">
+              Treatment
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
             </button>
-          </form>
 
-          <div class="vscroll-success" id="hero-enquiry-success">
-            <span class="vscroll-success-check" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            </span>
-            <h3>Enquiry Received</h3>
-            <p>Thank you for beginning your wellness journey with Vedhara Ayurveda. Our wellness team will get in touch with you shortly.</p>
-            <button type="button" class="vscroll-reset" id="hero-enquiry-reset">Submit Another Enquiry</button>
-          </div>
-
-          <div class="vscroll-badges">
-            <div class="vbadge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13.5A5.5 6.5 0 1 0 8 .5a5.5 6.5 0 0 0 0 13Z" transform="translate(4 8)"/><circle cx="12" cy="10.5" r="6"/><path d="M8.5 15.5 12 20l3.5-4.5"/></svg>
-              <span>Authentic<br>Ayurveda</span>
+            <div class="mobile-submenu" id="mobile-panel-0">
+              <div class="mobile-submenu-inner">
+                <ul>
+                  <li><a href="panchakarma.html">Panchakarma</a></li>
+                  <li><a href="rejuvenation.html">Rejuvenation Treatment</a></li>
+                  <li><a href="destress.html">De-Stress Treatment</a></li>
+                  <li><a href="treatments.html#relaxation">Relaxation Treatment</a></li>
+                  <li><a href="treatments.html#weight-loss">Weight Loss Treatment</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="vbadge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4.5c-8 0-14.5 5-15.5 12.5C12 18 19 12.5 20 4.5Z"/><path d="M5 20c3-4 6-7 12-11"/></svg>
-              <span>Personalized<br>Care</span>
-            </div>
-            <div class="vbadge">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3.4"/></svg>
-              <span>Serene<br>Environment</span>
-            </div>
-          </div>
-
-          <div class="vscroll-divider small" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4c-2 3-2 13 0 16 2-3 2-13 0-16Z"/></svg><span></span></div>
-          <p class="vscroll-tagline">Heal&nbsp; &bull; &nbsp;Rejuvenate&nbsp; &bull; &nbsp;Reconnect</p>
-        </div>
-
-        <div class="vscroll-rod vscroll-rod-bottom" aria-hidden="true">
-          <span class="vscroll-finial vscroll-finial-l"></span>
-          <span class="vscroll-finial vscroll-finial-r"></span>
-        </div>
+          </li>
+          <li class="mobile-nav-simple">
+            <a class="mobile-nav-link" href="ayurveda.html">Ayurveda</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mobile-nav-footer">
+        <a class="btn btn-primary" href="booking.html" style="margin-left:auto">Book Consultation</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="vh-hero" aria-label="Introduction">
+      <div class="vh-hero-media">
+        <picture>
+          <source srcset="assets/images/heroimg.webp" type="image/webp">
+          <img loading="eager" decoding="async"
+            src="assets/images/heroimg.jpg"
+            alt="A traditional boat gliding down a palm-lined Kerala backwater at golden hour"
+            fetchpriority="high"
+            width="1672" height="941"
+          />
+        </picture>
+        <div class="vh-hero-scrim"></div>
+      </div>
+
+      <div class="container section-pad vh-hero-inner">
+        <div class="vh-hero-copy">
+          <p class="vh-eyebrow reveal">A Quieter Way of Living</p>
+          <h1 class="vh-hero-heading">
+            <span class="vh-hero-heading-main reveal" style="--d:1">Traditional Ayurveda,</span>
+            <span class="vh-hero-heading-accent reveal" style="--d:2">by the bay of Alappuzha.</span>
+          </h1>
+          <p class="vh-hero-sub reveal" style="--d:3">Authentic Ayurveda, Yoga and holistic wellness rooted in traditional practice, in the heart of Kerala.</p>
+
+          <div class="vh-hero-actions reveal" style="--d:4">
+            <a class="btn btn-primary" href="#consult">Book a Consultation <span aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-outline" href="about.html">Explore Vedhara <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+          <div class="vh-hero-features reveal" style="--d:5">
+            <div class="vh-hero-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-4-1-7-5-7-10 5 0 9 2 9 7 0-5 4-7 9-7 0 5-3 9-7 10a4 4 0 0 1-4 0Z"/></svg>
+              <span>Authentic<br />Ayurveda</span>
+            </div>
+            <div class="vh-hero-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 14c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 20c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg>
+              <span>Serene<br />Location</span>
+            </div>
+            <div class="vh-hero-feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11Z"/></svg>
+              <span>Personalised<br />Care</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vh-consult-wrap" id="consult">
+          <div class="vh-consult-card reveal" style="--d:3">
+            <span class="vh-consult-ring" aria-hidden="true"></span>
+<p class="vh-consult-eyebrow">Begin Your Journey</p>
+            <h2 class="vh-consult-heading">Book a Consultation</h2>
+            <p class="vh-consult-sub">A few details and we'll be in touch.</p>
+
+            <form class="vh-consult-form" action="booking.html" method="get">
+              <div class="vh-field">
+                <span class="vh-field-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4.2 5-6 7.5-6s6 1.8 7.5 6"/></svg>
+                </span>
+                <label class="visually-hidden" for="c-name">Full Name</label>
+                <input id="c-name" name="name" type="text" placeholder="Full Name" autocomplete="name" />
+              </div>
+              <div class="vh-field">
+                <span class="vh-field-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m4 6.5 8 6.5 8-6.5"/></svg>
+                </span>
+                <label class="visually-hidden" for="c-email">Email Address</label>
+                <input id="c-email" name="email" type="email" placeholder="Email Address" autocomplete="email" />
+              </div>
+              <div class="vh-field">
+                <span class="vh-field-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3c0 1-1 1.8-2 1.6-6-1-11-6-12-12-.2-1 .6-2 1.6-2Z"/></svg>
+                </span>
+                <label class="visually-hidden" for="c-phone">Phone Number</label>
+                <input id="c-phone" name="phone" type="tel" placeholder="Phone Number" autocomplete="tel" />
+              </div>
+              <div class="vh-field vh-field-select">
+                <span class="vh-field-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4-1-7-5-7-10 5 0 9 2 9 7 0-5 4-7 9-7 0 5-3 9-7 10a4 4 0 0 1-4 0Z"/></svg>
+                </span>
+                <label class="visually-hidden" for="c-interest">Area of Interest</label>
+                <select id="c-interest" name="interest">
+                  <option value="" selected>Area of Interest</option>
+                  <option value="ayurveda">Ayurveda</option>
+                  <option value="yoga">Yoga</option>
+                  <option value="panchakarma">Panchakarma</option>
+                  <option value="rejuvenation">Rejuvenation Treatment</option>
+                  <option value="de-stress">De-Stress Treatment</option>
+                  <option value="relaxation">Relaxation Treatment</option>
+                  <option value="weight-loss">Weight Loss Treatment</option>
+                </select>
+                <svg class="vh-field-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+
+              <div class="vh-consult-row">
+                <p class="vh-consult-foot">A healthier you<br />awaits.</p>
+                <button class="vh-consult-submit" type="submit" aria-label="Send enquiry">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="vh-hero-locale">
+        <span>Heal</span><br />
+        <span>Rest</span><br />
+        <span>Rebalance</span>
+      </div>
+    </section>
+
+    <!-- ============ MOBILE CONSULTATION POPUP ============ -->
+    <div class="vh-consult-modal-overlay" id="consultModalOverlay">
+      <div class="vh-consult-modal" role="dialog" aria-modal="true" aria-labelledby="consultModalHeading">
+        <button type="button" class="vh-consult-modal-close" id="consultModalClose" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <p class="vh-consult-eyebrow">Begin Your Journey</p>
+        <h2 class="vh-consult-heading" id="consultModalHeading">Book a Consultation</h2>
+        <p class="vh-consult-sub">A few details and we'll be in touch.</p>
+
+        <form class="vh-consult-form" action="booking.html" method="get">
+          <div class="vh-field">
+            <span class="vh-field-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4.2 5-6 7.5-6s6 1.8 7.5 6"/></svg>
+            </span>
+            <label class="visually-hidden" for="m-name">Full Name</label>
+            <input id="m-name" name="name" type="text" placeholder="Full Name" autocomplete="name" />
+          </div>
+          <div class="vh-field">
+            <span class="vh-field-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m4 6.5 8 6.5 8-6.5"/></svg>
+            </span>
+            <label class="visually-hidden" for="m-email">Email Address</label>
+            <input id="m-email" name="email" type="email" placeholder="Email Address" autocomplete="email" />
+          </div>
+          <div class="vh-field">
+            <span class="vh-field-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3c0 1-1 1.8-2 1.6-6-1-11-6-12-12-.2-1 .6-2 1.6-2Z"/></svg>
+            </span>
+            <label class="visually-hidden" for="m-phone">Phone Number</label>
+            <input id="m-phone" name="phone" type="tel" placeholder="Phone Number" autocomplete="tel" />
+          </div>
+          <div class="vh-field vh-field-select">
+            <span class="vh-field-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4-1-7-5-7-10 5 0 9 2 9 7 0-5 4-7 9-7 0 5-3 9-7 10a4 4 0 0 1-4 0Z"/></svg>
+            </span>
+            <label class="visually-hidden" for="m-interest">Area of Interest</label>
+            <select id="m-interest" name="interest">
+              <option value="" selected>Area of Interest</option>
+              <option value="ayurveda">Ayurveda</option>
+              <option value="yoga">Yoga</option>
+              <option value="panchakarma">Panchakarma</option>
+              <option value="rejuvenation">Rejuvenation Treatment</option>
+              <option value="de-stress">De-Stress Treatment</option>
+              <option value="relaxation">Relaxation Treatment</option>
+              <option value="weight-loss">Weight Loss Treatment</option>
+            </select>
+            <svg class="vh-field-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+
+          <div class="vh-consult-row">
+            <p class="vh-consult-foot">A healthier you<br />awaits.</p>
+            <button class="vh-consult-submit" type="submit" aria-label="Send enquiry">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    
 <!-- ============ INTRODUCTION ============ -->
 <section class="section">
   <div class="container">
     <div class="intro-grid">
       <div class="intro-media reveal-left">
-        <img src="assets/images/gallery/ayurveda-herbal-oils-bowls.jpg" alt="Ayurvedic herbal oils and healing setting">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/ayurveda-herbal-oils-bowls.jpg" alt="Ayurvedic herbal oils and healing setting">
         <div class="ring"></div>
       </div>
       <div class="intro-text reveal-right">
@@ -316,7 +342,7 @@
     <div class="cards-3">
       <div class="exp-card reveal">
         <div class="exp-card-media">
-          <img src="assets/images/gallery/rejuvenation-back-massage.jpg" alt="Peaceful Ayurvedic healing space">
+          <img loading="lazy" decoding="async" src="assets/images/gallery/rejuvenation-back-massage.jpg" alt="Peaceful Ayurvedic healing space">
           <span class="exp-num">01</span>
         </div>
         <div class="exp-card-body">
@@ -326,7 +352,7 @@
       </div>
       <div class="exp-card reveal" style="transition-delay:.1s;">
         <div class="exp-card-media">
-          <img src="assets/images/gallery/panchakarma-shirodhara-herbs.jpg" alt="Traditional Ayurvedic therapy">
+          <img loading="lazy" decoding="async" src="assets/images/gallery/panchakarma-shirodhara-herbs.jpg" alt="Traditional Ayurvedic therapy">
           <span class="exp-num">02</span>
         </div>
         <div class="exp-card-body">
@@ -336,7 +362,7 @@
       </div>
       <div class="exp-card reveal" style="transition-delay:.2s;">
         <div class="exp-card-media">
-          <img src="assets/images/gallery/ayurveda-herbal-prep.jpg" alt="Healthy Ayurvedic food">
+          <img loading="lazy" decoding="async" src="assets/images/gallery/ayurveda-herbal-prep.jpg" alt="Healthy Ayurvedic food">
           <span class="exp-num">03</span>
         </div>
         <div class="exp-card-body">
@@ -353,8 +379,8 @@
   <div class="container">
     <div class="about-grid">
       <div class="collage reveal-left">
-        <img class="c1" src="assets/images/gallery/ayurveda-herbal-prep.jpg" alt="Vedhara Ayurveda therapist preparing herbal treatment">
-        <img class="c2" src="assets/images/gallery/ayurveda-elder-preparation.jpg" alt="Kerala nature surrounding Vedhara retreat">
+        <img loading="lazy" decoding="async" class="c1" src="assets/images/gallery/ayurveda-herbal-prep.jpg" alt="Vedhara Ayurveda therapist preparing herbal treatment">
+        <img loading="lazy" decoding="async" class="c2" src="assets/images/gallery/ayurveda-elder-preparation.jpg" alt="Kerala nature surrounding Vedhara retreat">
         <div class="vline"></div>
       </div>
       <div class="reveal-right">
@@ -382,7 +408,7 @@
     </div>
     <div class="treat-grid">
       <div class="treat-card reveal">
-        <img src="assets/images/gallery/panchakarma-shirodhara-herbs.jpg" alt="Panchakarma detox therapy">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/panchakarma-shirodhara-herbs.jpg" alt="Panchakarma detox therapy">
         <div class="treat-card-body">
           <h3>Panchakarma Therapy</h3>
           <p>A traditional Ayurvedic purification and rejuvenation program designed to support the body's natural balance through carefully selected therapies, herbal preparations, and guided wellness practices.</p>
@@ -390,7 +416,7 @@
         </div>
       </div>
       <div class="treat-card reveal" style="transition-delay:.08s;">
-        <img src="assets/images/gallery/rejuvenation-back-massage.jpg" alt="Rejuvenation therapy">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/rejuvenation-back-massage.jpg" alt="Rejuvenation therapy">
         <div class="treat-card-body">
           <h3>Rejuvenation Therapy</h3>
           <p>A nourishing Ayurvedic wellness experience focused on restoring vitality, relaxation, and a renewed sense of balance.</p>
@@ -398,7 +424,7 @@
         </div>
       </div>
       <div class="treat-card reveal" style="transition-delay:.16s;">
-        <img src="assets/images/gallery/shirodhara-herbs-statue.jpg" alt="De-stress therapy">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/shirodhara-herbs-statue.jpg" alt="De-stress therapy">
         <div class="treat-card-body">
           <h3>De-Stress Therapy</h3>
           <p>A calming Ayurvedic therapy experience created to help release everyday tension and encourage mental relaxation.</p>
@@ -406,7 +432,7 @@
         </div>
       </div>
       <div class="treat-card reveal">
-        <img src="assets/images/gallery/weight-loss-yoga-diet.jpg" alt="Weight loss treatment">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/weight-loss-yoga-diet.jpg" alt="Weight loss treatment">
         <div class="treat-card-body">
           <h3>Weight Loss Treatment</h3>
           <p>A personalized Ayurvedic wellness program supporting healthy lifestyle habits, balanced routines, and mindful weight management.</p>
@@ -414,7 +440,7 @@
         </div>
       </div>
       <div class="treat-card reveal" style="transition-delay:.08s;">
-        <img src="assets/images/gallery/hot-stone-massage.jpg" alt="Relaxation treatment">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/hot-stone-massage.jpg" alt="Relaxation treatment">
         <div class="treat-card-body">
           <h3>Relaxation Treatment</h3>
           <p>A soothing Ayurvedic experience combining traditional oils, therapeutic touch, and a peaceful environment to help the body and mind unwind.</p>
@@ -453,7 +479,7 @@
 <section class="section">
   <div class="container">
     <div class="overlay-panel reveal-scale">
-      <img src="assets/images/gallery/rejuvenation-massage-resort.jpg" alt="Rejuvenation therapy in natural surroundings">
+      <img loading="lazy" decoding="async" src="assets/images/gallery/rejuvenation-massage-resort.jpg" alt="Rejuvenation therapy in natural surroundings">
       <div class="overlay-panel-body">
         <p class="eyebrow">Rejuvenation</p>
         <h2>Restore Your Energy. Renew Your Body.</h2>
@@ -475,7 +501,7 @@
         <a href="destress.html" class="btn btn-outline signature-btn">Discover De-Stress Therapy</a>
       </div>
       <div class="intro-media reveal-right" style="order:1;">
-        <img src="assets/images/gallery/shirodhara-herbs-statue.jpg" alt="Shirodhara relaxation therapy">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/shirodhara-herbs-statue.jpg" alt="Shirodhara relaxation therapy">
         <div class="ring"></div>
       </div>
     </div>
@@ -515,7 +541,7 @@
   <div class="container">
     <div class="intro-grid">
       <div class="intro-media reveal-left">
-        <img src="assets/images/gallery/ayurvedic-beauty-massage.jpg" alt="Traditional Ayurvedic beauty massage ritual">
+        <img loading="lazy" decoding="async" src="assets/images/gallery/ayurvedic-beauty-massage.jpg" alt="Traditional Ayurvedic beauty massage ritual">
         <div class="ring"></div>
       </div>
       <div class="intro-text reveal-right">
@@ -549,7 +575,7 @@
 <section class="section">
   <div class="container">
     <div class="overlay-panel reveal-scale">
-      <img src="assets/images/gallery/yoga-pavilion-group.jpg" alt="Yoga and meditation at Vedhara">
+      <img loading="lazy" decoding="async" src="assets/images/gallery/yoga-pavilion-group.jpg" alt="Yoga and meditation at Vedhara">
       <div class="overlay-panel-body">
         <p class="eyebrow">Yoga & Movement</p>
         <h2>Move. Breathe. Find Your Balance.</h2>
@@ -651,7 +677,7 @@
         <div class="testi-source"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Posted on Google &middot; 8 months ago</div>
       </div>
       <div class="testi-slide">
-        <div class="testi-avatar" style="background:#6b8e4e;">R</div>
+        <div class="testi-avatar" style="background:#B58A42;">R</div>
         <p class="testi-quote">"I had a truly rejuvenating experience at this Ayurvedic massage centre. The therapists are highly skilled and follow authentic Ayurvedic techniques with great precision. The ambience is calm, clean, and soothing, which instantly helps you…"</p>
         <div class="testi-meta"><span class="testi-stars">★★★★★</span><span class="name">Rohit Bishnoi</span></div>
         <div class="testi-trip">Holiday · Friends</div>
@@ -766,7 +792,7 @@
   </div>
 </section>
 <div class="lightbox">
-  <img src="" alt="">
+  <img loading="lazy" decoding="async" src="" alt="">
   <button class="lightbox-close" aria-label="Close">✕</button>
   <button class="lightbox-prev" aria-label="Previous">‹</button>
   <button class="lightbox-next" aria-label="Next">›</button>
@@ -837,7 +863,7 @@
 <section class="section">
   <div class="container">
     <div class="cta-banner reveal-scale">
-      <img src="assets/images/gallery/kerala-retreat-courtyard.jpg" alt="Kerala nature backdrop">
+      <img loading="lazy" decoding="async" src="assets/images/gallery/kerala-retreat-courtyard.jpg" alt="Kerala nature backdrop">
       <div class="cta-banner-body">
         <h2>Begin Your Journey Back to Balance</h2>
         <p>Take a pause from the rush of everyday life. Discover the timeless wellness traditions of Kerala and find an experience created around you.</p>
@@ -856,8 +882,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="footer-brand-logo" aria-label="Vedhara Ayurveda - Go to homepage">
-          <img src="assets/images/logo-mark.png" alt="" class="nav-logo-mark">
-          <img src="assets/images/logo-wordmark.png" alt="Vedhara Ayurveda" class="nav-logo-word-img">
+          <img loading="lazy" decoding="async" src="assets/images/logo-mark.png" alt="" class="nav-logo-mark">
+          <img loading="lazy" decoding="async" src="assets/images/logo-wordmark.png" alt="Vedhara Ayurveda" class="nav-logo-word-img">
         </a>
         <p>Ancient Kerala Wisdom. A Journey Back to Balance. Traditional Ayurveda, natural healing and inner balance in the heart of Kerala.</p>
         <div class="footer-social">
@@ -874,7 +900,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="treatments.html">Treatments</a></li>
           <li><a href="yoga.html">Yoga</a></li>
-          <li><a href="kalari.html">Kalari</a></li>
           <li><a href="ayurveda.html">Ayurveda</a></li>
           <li><a href="index.html#wellness-journey">Wellness Journey</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -888,7 +913,6 @@
           <li><a href="destress.html">De-Stress</a></li>
           <li><a href="treatments.html#weight-loss">Weight Wellness</a></li>
           <li><a href="treatments.html#relaxation">Relaxation</a></li>
-          <li><a href="kalari.html">Kalari</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -925,9 +949,13 @@
   <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.01 3C9.38 3 4 8.35 4 14.95c0 2.35.66 4.55 1.8 6.42L4 29l7.86-1.75a13.1 13.1 0 0 0 4.15.68c6.63 0 12.01-5.35 12.01-11.95C28.02 8.35 22.64 3 16.01 3Zm0 21.77c-1.36 0-2.7-.36-3.88-1.04l-.28-.16-4.66 1.04 1.06-4.52-.18-.29a9.7 9.7 0 0 1-1.5-5.85c0-5.4 4.4-9.78 9.44-9.78 5.04 0 9.44 4.38 9.44 9.78s-4.4 9.82-9.44 9.82Zm5.4-7.34c-.29-.15-1.73-.85-2-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.84.11.56-.08 1.73-.71 1.98-1.39.24-.68.24-1.27.17-1.39-.07-.12-.26-.2-.55-.34Z"/></svg>
 </a>
 <button class="back-top" aria-label="Back to top">↑</button>
+<script src="js/ai-chat-widget.js" defer></script>
 
 <script src="js/main.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/hero-enquiry.js"></script>
+<script src="js/home-nav.js"></script>
+  <script src="js/source-navbar.js"></script>
+<script src="js/consult-modal.js"></script>
 </body>
 </html>
