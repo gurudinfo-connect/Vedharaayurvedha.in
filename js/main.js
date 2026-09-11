@@ -263,9 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Contact form (front-end only) ---------- */
+  /* ---------- Contact form (emails via FormSubmit) ---------- */
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
+    const CONTACT_DESTINATION_EMAIL = 'vedharabeachhome@gmail.com';
+    const contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       let valid = true;
@@ -285,9 +288,48 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (!valid) return;
 
-      contactForm.style.display = 'none';
-      const success = document.querySelector('#contact-success');
-      success && success.classList.add('active');
+      const nameField = contactForm.querySelector('#c-name');
+      const phoneField = contactForm.querySelector('#c-phone');
+      const treatmentField = contactForm.querySelector('#c-treatment');
+      const dateField = contactForm.querySelector('#c-date');
+      const messageField = contactForm.querySelector('#c-message');
+      const originalLabel = contactSubmitBtn ? contactSubmitBtn.textContent : '';
+      if (contactSubmitBtn) {
+        contactSubmitBtn.disabled = true;
+        contactSubmitBtn.textContent = 'Sending…';
+      }
+
+      const payload = new FormData();
+      payload.append('Name', nameField ? nameField.value.trim() : '');
+      payload.append('Email', emailField ? emailField.value.trim() : '');
+      payload.append('Phone', phoneField ? phoneField.value.trim() : '');
+      payload.append('Preferred Therapy', treatmentField ? treatmentField.value : '');
+      payload.append('Preferred Date', (dateField && dateField.value) || 'Not specified');
+      payload.append('Message', messageField ? messageField.value.trim() : '');
+      payload.append('_subject', 'New Contact Enquiry — Vedhara Ayurveda Website');
+      payload.append('_captcha', 'false');
+      payload.append('_template', 'table');
+
+      fetch(`https://formsubmit.co/ajax/${CONTACT_DESTINATION_EMAIL}`, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: payload
+      })
+        .then(res => res.json())
+        .then(() => {
+          contactForm.style.display = 'none';
+          const success = document.querySelector('#contact-success');
+          success && success.classList.add('active');
+        })
+        .catch(() => {
+          alert('Sorry, something went wrong sending your message. Please try again or call us directly.');
+        })
+        .finally(() => {
+          if (contactSubmitBtn) {
+            contactSubmitBtn.disabled = false;
+            contactSubmitBtn.textContent = originalLabel;
+          }
+        });
     });
   }
 

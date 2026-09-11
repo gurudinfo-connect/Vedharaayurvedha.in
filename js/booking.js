@@ -1,13 +1,17 @@
 /* =========================================================
    VEDHARA AYURVEDA — booking.js
-   Booking page form validation (front-end only).
+   Booking page form validation + email delivery via FormSubmit
+   (no backend required). Update DESTINATION_EMAIL below if it
+   ever changes.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#booking-form');
   if (!form) return;
 
+  const DESTINATION_EMAIL = 'vedharabeachhome@gmail.com';
   const successPanel = document.querySelector('#booking-success');
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   function showError(field, message) {
     const wrap = field.closest('.field');
@@ -78,7 +82,41 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    form.style.display = 'none';
-    successPanel && successPanel.classList.add('active');
+    const country = form.querySelector('#country');
+    const message = form.querySelector('#b-message');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    const payload = new FormData();
+    payload.append('Full Name', name.value.trim());
+    payload.append('Email', email.value.trim());
+    payload.append('Phone', phone.value.trim());
+    payload.append('Country', (country && country.value.trim()) || 'Not specified');
+    payload.append('Preferred Date', date.value);
+    payload.append('Preferred Treatment', treatment.value);
+    payload.append('Number of Guests', guests.value);
+    payload.append('Message', (message && message.value.trim()) || '—');
+    payload.append('_subject', 'New Booking Enquiry — Vedhara Ayurveda Website');
+    payload.append('_captcha', 'false');
+    payload.append('_template', 'table');
+
+    fetch(`https://formsubmit.co/ajax/${DESTINATION_EMAIL}`, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: payload
+    })
+      .then(res => res.json())
+      .then(() => {
+        form.style.display = 'none';
+        successPanel && successPanel.classList.add('active');
+      })
+      .catch(() => {
+        alert('Sorry, something went wrong sending your enquiry. Please try again or call us directly.');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      });
   });
 });
