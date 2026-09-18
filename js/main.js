@@ -7,18 +7,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Page loader ---------- */
+  // Hide as soon as the DOM/CSS is ready (no need to wait for every
+  // image/font on the page to finish downloading) with a tiny hard cap
+  // so the loader never blocks the page for more than a moment.
   const loader = document.querySelector('.page-loader');
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader && loader.classList.add('hidden');
-      document.body.classList.add('loaded');
-    }, 250);
-  });
-  // fallback in case load already fired
-  setTimeout(() => {
+  const hideLoader = () => {
     loader && loader.classList.add('hidden');
     document.body.classList.add('loaded');
-  }, 1200);
+  };
+  requestAnimationFrame(() => requestAnimationFrame(hideLoader));
+  setTimeout(hideLoader, 400);
 
   /* ---------- Navbar shrink on scroll ---------- */
   const navbar = document.querySelector('.navbar');
@@ -266,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Contact form (emails via FormSubmit) ---------- */
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
-    const CONTACT_DESTINATION_EMAIL = 'vedharabeachhome@gmail.com';
+    const CONTACT_DESTINATION_EMAIL = 'vedhabeachhome@gmail.com';
     const contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
 
     contactForm.addEventListener('submit', function (e) {

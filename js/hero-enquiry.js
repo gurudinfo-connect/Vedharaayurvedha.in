@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#hero-enquiry-form');
   if (!form) return;
 
-  const DESTINATION_EMAIL = 'vedharabeachhome@gmail.com';
+  const DESTINATION_EMAIL = 'vedhabeachhome@gmail.com';
   const wrap = document.querySelector('#vedharaScrollForm');
   const successPanel = document.querySelector('#hero-enquiry-success');
   const resetBtn = document.querySelector('#hero-enquiry-reset');

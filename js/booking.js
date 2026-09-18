@@ -9,9 +9,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#booking-form');
   if (!form) return;
 
-  const DESTINATION_EMAIL = 'vedharabeachhome@gmail.com';
+  const DESTINATION_EMAIL = 'vedhabeachhome@gmail.com';
   const successPanel = document.querySelector('#booking-success');
   const submitBtn = form.querySelector('button[type="submit"]');
+
+  /* ---- International phone field (works for every country's dial
+     code + number-length rules via intl-tel-input / libphonenumber) ---- */
+  const phoneInput = form.querySelector('#phone');
+  const countryField = form.querySelector('#country');
+  let iti = null;
+  let itiReady = Promise.resolve();
+
+  if (phoneInput && window.intlTelInput) {
+    iti = window.intlTelInput(phoneInput, {
+      initialCountry: 'in',                 // default guess; user can change/search any country
+      separateDialCode: true,
+      nationalMode: false,
+      autoPlaceholder: 'aggressive',
+      loadUtils: () => import('https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js')
+    });
+    itiReady = iti.promise || Promise.resolve(); // resolves once validation utils are loaded
+
+    const syncCountryField = () => {
+      if (!countryField) return;
+      const data = iti.getSelectedCountryData();
+      countryField.value = data && data.name ? data.name : '';
+    };
+    syncCountryField();
+    phoneInput.addEventListener('countrychange', syncCountryField);
+  }
 
   function showError(field, message) {
     const wrap = field.closest('.field');
@@ -28,8 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     field.addEventListener('change', () => clearError(field));
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    await itiReady; // make sure the validation utils have finished loading
     let valid = true;
 
     const name = form.querySelector('#full-name');
@@ -45,7 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const phone = form.querySelector('#phone');
-    if (!/^[\d+\s()-]{7,}$/.test(phone.value.trim())) {
+    if (iti) {
+      // Validates against the selected country's real numbering-plan rules
+      // (correct length, valid prefixes, etc.) for every country, not just one.
+      if (!phone.value.trim() || !iti.isValidNumber()) {
+        const err = iti.getValidationError && iti.getValidationError();
+        // error codes: 0 invalid, 1 invalid country code, 2 too short, 3 too long, 4 invalid
+        const msg = err === 2
+          ? 'This number is too short for the selected country.'
+          : err === 3
+          ? 'This number is too long for the selected country.'
+          : `Please enter a valid phone number for ${(iti.getSelectedCountryData().name) || 'the selected country'}.`;
+        showError(phone, msg);
+        valid = false;
+      }
+    } else if (!/^[\d+\s()-]{7,}$/.test(phone.value.trim())) {
+      // Fallback if the phone-validation library failed to load
       showError(phone, 'Please enter a valid phone number.');
       valid = false;
     }
@@ -89,10 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.textContent = 'Sending…';
 
     const payload = new FormData();
+    const fullPhone = iti ? iti.getNumber() : phone.value.trim(); // e.g. +91XXXXXXXXXX
     payload.append('Full Name', name.value.trim());
     payload.append('Email', email.value.trim());
-    payload.append('Phone', phone.value.trim());
-    payload.append('Country', (country && country.value.trim()) || 'Not specified');
+    payload.append('Phone', fullPhone);
+    payload.append('Country', (country && country.value.trim()) || (iti && iti.getSelectedCountryData().name) || 'Not specified');
     payload.append('Preferred Date', date.value);
     payload.append('Preferred Treatment', treatment.value);
     payload.append('Number of Guests', guests.value);

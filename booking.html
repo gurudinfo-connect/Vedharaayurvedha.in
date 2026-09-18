@@ -18,6 +18,15 @@
   <link rel="stylesheet" href="css/source-navbar.css">
   <link rel="stylesheet" href="css/source-colors.css">
   <link rel="stylesheet" href="css/final-source-colors.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+  <style>
+    /* Make the intl-tel-input flag/country-code dropdown match the site's field styling */
+    .field .iti{display:block;width:100%;}
+    .field .iti input.iti__tel-input{width:100%;padding-top:14px;padding-bottom:14px;padding-right:16px;font-family:inherit;font-size:1rem;border:1px solid rgba(36,31,24,.18);border-radius:var(--radius-sm);background:var(--cream);color:var(--dark-text);transition:border-color .3s ease,box-shadow .3s ease;}
+    .field .iti input.iti__tel-input:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(181,103,58,.12);}
+    .field.invalid .iti input.iti__tel-input{border-color:#A7654D;}
+    #country{background:rgba(36,31,24,.05);cursor:not-allowed;}
+  </style>
 </head>
 <body>
 <div class="page-loader"><div class="loader-leaf"></div></div>
@@ -152,7 +161,7 @@
             </div>
             <div class="form-row">
               <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required><span class="error-msg">Please enter a valid phone number.</span></div>
-              <div class="field"><label for="country">Country</label><input type="text" id="country" name="country"></div>
+              <div class="field"><label for="country">Country</label><input type="text" id="country" name="country" readonly placeholder="Auto-filled from phone code"></div>
             </div>
             <div class="form-row">
               <div class="field"><label for="preferred-date">Preferred Date</label><input type="date" id="preferred-date" name="preferred-date" required><span class="error-msg">Please choose a date.</span></div>
@@ -200,7 +209,7 @@
         </a>
         <p>Ancient Kerala Wisdom. A Journey Back to Balance. Traditional Ayurveda, natural healing and inner balance in the heart of Kerala.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.instagram.com/vedhara_ayurveda?stkn=cHBic2psdHNnY2hi" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg></a>
           <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg></a>
           <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.4-4A8 8 0 1112 20a8 8 0 01-4-1.1L4 20z"/></svg></a>
@@ -232,7 +241,7 @@
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:+919746797786">+91 97467 97786</a></li>
-          <li><a href="mailto:vedharabeachhome@gmail.com">vedharabeachhome@gmail.com</a></li>
+          <li><a href="mailto:vedhabeachhome@gmail.com">vedhabeachhome@gmail.com</a></li>
           <li><a href="https://www.google.com/maps/search/?api=1&query=Building%20No%3A%2052%2C%2065%20A%2C%20Neela%20Waters%20Rd%2C%20Sea%20View%20Ward%2C%20Alappuzha%2C%20Kerala%20688012" target="_blank" rel="noopener">Building No: 52, 65 A, Neela Waters Rd,<br>Sea View Ward, Alappuzha, Kerala 688012</a></li>
         </ul>
       </div>
@@ -265,6 +274,7 @@
 <script src="js/ai-chat-widget.js" defer></script>
 <script src="js/main.js"></script>
 <script src="js/animations.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
 <script src="js/booking.js"></script>
   <script src="js/source-navbar.js"></script>
 </body>

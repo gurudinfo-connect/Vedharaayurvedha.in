@@ -7,7 +7,7 @@
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const DESTINATION_EMAIL = 'vedharabeachhome@gmail.com';
+  const DESTINATION_EMAIL = 'vedhabeachhome@gmail.com';
   const forms = document.querySelectorAll('.vh-consult-form');
   if (!forms.length) return;
 
